@@ -1,0 +1,19 @@
+<h1>btnTitulo</h1>
+
+<form [formGroup]="loginform" (ngSubmit) = "submit()" #formDit = "ngForm">
+    <div class="input_box">
+    <label for="">usarname:</label>
+    <input type="text" formControlName="usarname" placeholder="insira o usarname" required>
+    </div>
+
+    <div class="input_box">
+        <label for="">password:</label>
+        <input type="text" formControlName="password" placeholder="insira a sua password" required>
+        </div>
+
+        <div class="btn_box">
+            <button type="submit" [disabled]="!loginform.valid" >btnAcao</button>
+            <button routerLink="/login">voltar</button>
+        </div>
+        
+</form>

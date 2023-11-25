@@ -1,0 +1,38 @@
+<div>
+    <button routerLink="/cadastro">Cadastrar Novo login</button>
+    <div class ="input-box">
+        <label for="">Procurar:</label>
+        <input type="text" placeholder="Qual login esta buscando?" (input)="search($event)">
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let login of logins">
+        <tr>
+
+            <td>{{ login?.loginId }}</td>
+            <td>{{login?.usarname}}</td>
+            <td>{{login?.password}}</td>
+            <td>
+                <button routerLink="/editar/{{login?.loginId}}">Editar</button>
+            </td>
+            <td>
+                <button>Detalhes</button>
+            </td>
+            <td>
+                <button>Deletar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
